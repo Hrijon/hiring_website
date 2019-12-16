@@ -36,13 +36,15 @@
 </div>
 </div>
 
-
-<div class='nav'>
+ 
+<div class='nav'>  
 <a href='#'>Home</a>
-<a href='#apply' >Apply</a>
+<!-- <a href='#apply' >Apply</a>
 <a href='#'></a>
 <a href='#'></a>
-<a href='#'></a>
+<a href='#'></a> -->
+<a id='apply' onclick="document.getElementById('id04').style.display='block'">Apply</a>
+<a id='upload' onclick="document.getElementById('id05').style.display='block'"> &#9889; Upload</a>
 
 <!-- <a id ='login' href='#cart' style:color:Green;">View Carts</a> -->
 
@@ -51,6 +53,7 @@
 
 </div>
 
+<!-- login model -->
 
   <div id="id01" class="loginModal">
     <form class="loginModal-content animate" action="server/login.php" method="post">
@@ -75,7 +78,6 @@
           <label>
             <input type="checkbox" checked="checked" name="remember"> Remember me
           </label>
-       <a href="#id02"> <input class="login" type="button" style="background-color: darkblue" value="Register modal"/></a>
 	</div>
 
         <div class="container" style="background-color:#f1f1f1">
@@ -84,6 +86,9 @@
         </div>
       </form>
       </div>
+
+
+      <!-- register model -->
 
       <div id="id02" class="registerModal">
         <form class="registerModal-content animate" action="server/register.php" method="post">
@@ -96,14 +101,17 @@
 
             <div class="container">
 
-              <label for="uname"><b>UserName</b></label>
+              <label for="uname"><b>Name</b></label>
               <input type="text" placeholder="Enter Username" name="username" required>
 
-		 <label for="address"><b>Address</b></label>
+		          <label for="address"><b>Address</b></label>
               <input type="text" placeholder="Enter Address" name="address" >
 
-	      <label for="email"><b>Contact e-mail</b></label>
-              <input type="text" placeholder="eg: b&rpc@gmail.com" name="email" >
+	            <label for="email"><b>Contact e-mail</b></label>
+              <input type="email" placeholder="eg: b&rpc@gmail.com" name="email" required>
+
+              <label for="phone"><b>Contact phone</b></label>
+              <input type="number" placeholder="eg: 0 452 *** *** " name="phone"><br><br>
 
               <label for="psw"><b>Password</b></label>
               <input type="password" placeholder="Enter New Password" name="password" required>
@@ -111,23 +119,92 @@
               <label for="psw"><b>Confirm Password</b></label>
               <input type="password" placeholder="Confirm your Password" name="cpassword" required>
 
-              <button class="login" type="submit" style="background-color: darkblue" name="register_btn" href=".loginModal" >Resister</button>
+              <button class="login" type="submit" style="background-color: darkblue" name="register_btn" >Resister</button>
 
             </div>
 
-            <div class="container">
-              <a href=".loginModal"> <button type="button" class="cancelbtn">Back</button></a>
-
+            <div class="container" style="background-color:#f1f1f1">
+              <button type="button" onclick="document.getElementById('id02').style.display='none'" class="cancelbtn">Cancel</button>
             </div>
+        </form>
+      </div>
+<!--  -->
+        <div id="id01" class="loginModal">
+          <form class="loginModal-content animate" action="server/login.php" method="post">
+      
+              <div class="imgcontainer">
+                <span onclick="document.getElementById('id01').style.display='none'" class="close" title="Close Modal">&times;</span>
+                <h2>Login Form</h2>
+                <img src="img/anonymous.jpeg" alt="anonymous" class="anonymous">
+              </div>
+      
+              <div class="container">
+                <label for="username"><b>Username</b></label>
+                <input id="username" type="text" placeholder="Enter Username" name="username" required>
+      
+                <label for="psw"><b>Password</b></label>
+                <input id="password" type="password" placeholder="Enter Password" name="password" required>
+      
+                <button class="login" name="login" id="login_btn" type="submit" >Login</button>
+      
+                <label>
+                  <input type="checkbox" checked="checked" name="remember"> Remember me
+                </label>
+              </div>
+      
+              <div class="container" style="background-color:#f1f1f1">
+                <button type="button" onclick="document.getElementById('id01').style.display='none'" class="cancelbtn">Cancel</button>
+                <span class="psw">Forgot <a href="#">password?</a></span>
+              </div>
+            </form>
+        </div>
+        
+<!-- upload model -->
+        <div id="id05" class="loginModal">
+          <form class="loginModal-content animate" action="server/upload.php" method="post">
+      
+              <div class="imgcontainer">
+                <span onclick="document.getElementById('id05').style.display='none'" class="close" title="Close Modal">&times;</span>
+                <h2>Upload files</h2>
+              </div>
+      
+              <div class="container">
+                <label for="resume"><b>Resume:  </b></label>
+                <input id="resume" type="file" name="resume"> <br><br>
+
+                <label for="docs"><b>Add supportive documents: </b></label>
+                <button name="docs" onclick="upload()"> Click here! </button><br>
+
+                <script>
+                  function upload() {
+                    var x = document.createElement("INPUT");
+                    x.setAttribute("type","file");
+                    document.body.appendChild(x);
+                  }
+                </script>
+                <button class="uploadRe" name="resume" id="submit_resume" type="submit"> Submit</button>
+
+              </div>                
+
+      
+              <div class="container" style="background-color:#f1f1f1">
+                <button type="button" onclick="document.getElementById('id05').style.display='none'" class="cancelbtn">Cancel</button>
+              </div>
           </form>
-          </div>
+        </div>
 
 <article id='home'>
 <?php include 'server/getitem.php';?>
 </article>
 
-<article id='i5' hidden='hidden'>
-<?php include 'server/get1item.php';?>
+<article id='apply' hidden='hidden'>
+<?php include 'server/apply.php';?>
+</article>
+
+<article id='buy' hidden='hidden'>
+<h4>Thanks for buying!</h4>
+</article>
+<?php include 'server/apply.php';?>
 </article>
 
 <article id='buy' hidden='hidden'>
@@ -138,58 +215,10 @@
 <?php include 'server/getcpu.php';?>
 </article>
 
-<article id='gpu' hidden='hidden'>
-<?php include 'server/getgpu.php';?>
-</article>
-
-<article id='ram' hidden='hidden'>
-<?php include 'server/getram.php';?>
-</article>
-
-<article id='mobo' hidden='hidden'>
-<?php include 'server/getmobo.php';?>
-</article>
-
-<article id='moni' hidden='hidden'>
-<?php include 'server/getmoni.php';?>
-</article>
-
-<article id='kb' hidden='hidden'>
-<?php include 'server/getkb.php';?>
-</article>
-
-<article id='lpt' hidden='hidden'>
-<?php include 'server/getlpt.php';?>
-</article>
-
-<article id='acc' hidden='hidden'>
-<?php include 'server/getacc.php';?>
-</article>
-
-<article id='pcc' hidden='hidden'>
-<?php include 'server/getpcc.php';?>
-</article>
-
-<article id='cpuc' hidden='hidden'>
-<?php include 'server/getcpuc.php';?>
-</article>
-
-<article id='mouse' hidden='hidden'>
-<?php include 'server/getmouse.php';?>
-</article>
-
-<article id='cart' hidden='hidden'>
-<?php include 'server/getcart.php';?>
-</article>
 
 
 
 
-
-
-
-
-<sript type="text/javascript" src="js/script.js"> </script>
 
 
 <article id='help' hidden='hidden'>
@@ -224,6 +253,7 @@
       </div>
 	</article>
 
+  <sript type="text/javascript" src="js/script.js"> </script>
 
 	</body>
 

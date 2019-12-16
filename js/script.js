@@ -4,6 +4,9 @@
 var loginModal = document.getElementById('id01');
 var registerModal = document.getElementById('id02');
 var homePage = document.getElementById('id03');
+var apply = document.getElementById('id04');
+var upload = document.getElementById('id05');
+
 
 // When the user clicks anywhere outside of the modal, close it
 window.onclick = function(event) {
@@ -18,5 +21,10 @@ window.onclick = function(event) {
     if (event.target == homePage) {
         homePage.style.display = "none";
     }
+
+    if(event.target == upload) {
+        upload.style.display = "none";
+    }
+
 }
 

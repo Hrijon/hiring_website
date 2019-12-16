@@ -32,6 +32,14 @@ input[type=text], input[type=password] {
   width: 100%;
 }
 
+.uploadRe {
+  background-color: green;
+  color: white;
+  padding: 10px 20px; 
+  cursor: pointer;
+  
+}
+
 .anonymous{
   border-radius: 50%;
   width: 40%;
@@ -75,6 +83,7 @@ span.psw {
 
 /* The Modal (background) */
 .loginModal,
+.upload,
 .registerModal {
   display: none; /* Hidden by default */
   position: fixed; /* Stay in place */
@@ -91,6 +100,7 @@ span.psw {
 
 /* Modal Content/Box */
 .loginModal-content,
+.upload-content,
  .registerModal-content{
   background-color: #fefefe;
   margin: 5% auto 15% auto; /* 5% from the top, 15% from the bottom and centered */
@@ -149,7 +159,7 @@ span.psw {
 .search-btn{
   height: 32px;
   width: 70px;
-  color: green;
+  color: darkblue;
 
 }
 
@@ -184,7 +194,7 @@ span.psw {
 .nav a {
   float: left;
   display: block;
-  color: green;
+  color: darkblue;
   text-align: center;
   padding: 14px 16px;
   text-decoration: none;
