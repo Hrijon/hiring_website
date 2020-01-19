@@ -1,12 +1,6 @@
-// file: ex1/js/index.js
-// purpose: js code for a rudimentary single page application
-// author: Hong Xie
-// date: 7/10/2018
-// last update: 6/10/2019
+// hrijon chp
 
-var page = ["#home", "#cpu", "#gpu", '#motherboard', '#ram',
-			'#monitor', '#pccase', '#cpucooling', '#mouse', '#keyboard', 
-			'#psu', '#i5', '#profile', '#cart'];
+var page = ["#id01", "#id02", "#page3"];
      // each value is used as a hash for an address
      // and it is doubled up as the id for a view
 var curPage = page[0];
@@ -21,6 +15,7 @@ $(document).ready(function(){
    // click event handler: 
    // 1) prevent loading of the new url
    // 2) may trigger hashchange event
+   
    $('nav a').click(function(e){
        e.preventDefault();
        var newPage = $(this).attr('href');
