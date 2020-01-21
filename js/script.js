@@ -14,12 +14,16 @@ window.onclick = function(event) {
         loginModal.style.display = "none";
     }
 
-   if (event.target == registerModal) {
-       registerModal.style.display = "none";
-   }
+    if (event.target == registerModal) {
+        registerModal.style.display = "none";
+    }
     
     if (event.target == homePage) {
         homePage.style.display = "none";
+    }
+
+    if(event.target == apply) {
+        apply.style.display = "none";
     }
 
     if(event.target == upload) {
