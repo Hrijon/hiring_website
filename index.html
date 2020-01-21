@@ -2,16 +2,36 @@
 <html> 
   <head>
         <meta name="viewport" content="width=device-width, initial-scale=1">
-		<link rel='stylesheet' href='css/styles.css'>
+		<link rel='stylesheet' type='text/css' href='css/styles.css'>
         <title>Index Page</title>
 	<script type="text/javascript" src="js/script.js"></script>
 	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
 <script src="js/jquery-3.3.1.js"></script>	
 	<script type="text/javascript" src="js/index.js"></script>
+<style>
+  #chip {
+  display: inline-block;
+  padding: 0 25px;
+  height: 50px;
+  font-size: 16px;
+  line-height: 50px;
+  border-radius: 25px;
+  background-color: #f1f1f1;
+  color: red;
+}
+
+#chip img {
+  float: left;
+  margin: 0 10px 0 -25px;
+  height: 50px;
+  width: 150px;
+  border-radius: 50%;
+}
+</style>
 
   </head>
   
-<body style = "text-align:center;">  
+<body style= "text-align:center;">  
   
 <div class='header'>       
 	<form action="server/search.php" method="POST">
@@ -40,18 +60,18 @@
  
 <div class='nav'>  
 <a href='#'>Home</a>
-<!-- <a href='#apply' >Apply</a>
-<a href='#'></a>
-<a href='#'></a>
-<a href='#'></a> -->
-<a id='apply' onclick="document.getElementById('id04').style.display='block'">Apply</a>
+<a href='#'>Jobs</a>
+<!--<a href='#'></a>
+  <a href='#'></a> -->
+<!-- <a id='apply' onclick="document.getElementById('id04').style.display='block'">Apply</a> -->
 <a id='upload' onclick="document.getElementById('id05').style.display='block'"> &#9889; Upload</a>
 
 <!-- <a id ='login' href='#cart' style:color:Green;">View Carts</a> -->
 
     <a id='login' onclick="document.getElementById('id02').style.display='block'">Register</a>
     <a id='login' onclick="document.getElementById('id01').style.display='block'">Login</a>
-
+   
+    
 </div>
 
 <!-- login model -->
@@ -127,14 +147,15 @@
             </div>
         </form>
       </div>
-<!--  -->
-        <!-- <div id="id01" class="loginModal">
-          <form class="loginModal-content animate" action="server/login.php" method="post">
-      
+<!--Apply model-->
+
+        <div id="id04" class="loginModal">
+            <form class="loginModal-content animate" action="server/apply.php" method="post">
+              
               <div class="imgcontainer">
-                <span onclick="document.getElementById('id01').style.display='none'" class="close" title="Close Modal">&times;</span>
-                <h2>Login Form</h2>
-                <img src="img/anonymous.jpeg" alt="anonymous" class="anonymous">
+                <span onclick="document.getElementById('id04').style.display='none'" class="close" title="Close Modal">&times;</span>
+                <h2>Application Form</h2>
+               <img src="img/anonymous.jpeg" alt="anonymous" class="anonymous"> 
               </div>
       
               <div class="container">
@@ -155,12 +176,13 @@
                 <button type="button" onclick="document.getElementById('id01').style.display='none'" class="cancelbtn">Cancel</button>
                 <span class="psw">Forgot <a href="#">password?</a></span>
               </div>
+
             </form>
-        </div> -->
-        
+          </div>
+       
 <!-- upload model -->
         <div id="id05" class="loginModal">
-          <form class="loginModal-content animate" action="server/upload.php" method="post">
+          <form class="loginModal-content animate" action="server/upload.php" method="post" enctype="multipart/form-data">
       
               <div class="imgcontainer">
                 <span onclick="document.getElementById('id05').style.display='none'" class="close" title="Close Modal">&times;</span>
@@ -192,7 +214,8 @@
           </form>
         </div>
 
-<article id='home'>
+
+<!-- <article id='home'>
 <?php include 'server/getitem.php';?>
 </article>
 
@@ -212,21 +235,23 @@
 
 <article id='cpu' hidden='hidden'>
 <?php include 'server/getcpu.php';?>
-</article>
+</article> -->
+
+<div id="chip">
+  <img src="img/me.jpg" alt="Person" width="96" height="96">
+  Hello, from Rijan
+  </div>
 
 
 
-
+</body>
 
 
 
 <article id='help' hidden='hidden'>
 	  <div class="profilecontainer">
         <h1>HELP</h1>
-        <h4>1. How to buy?</h4>
-		<h3>To buy our product simply log-in or register, if you dont have an account, and function will be granted</h3>
-		<h4>2. Delivery?</h4>
-		<h3>Product will then be delivered to address registered</h3>
+        
 		<h4>More Information</h4>
 		<h3>Contanct: +61 8 9360 6000</h3>
       </div>
@@ -235,31 +260,27 @@
 	<article id='about' hidden='hidden'>
 	  <div class="profilecontainer">
         <h1>About</h1>
-        <h4>B&R PC</h4>
-		<h3>
-		Hello, welcome to B&R PC. we are a pc component shop that sells various parts for a pc such as CPU, GPU, Motherboard,
-		and others from different types of brands starting from Intel, Asus, MSI, and many more. we make pc building as easy 
-		as making legos.
-		</h3>
-		<h4>Location</h4>
-		<h3>B&R PC is located in 90 South Street Murdoch WA 6150</h3>
-		<h4>How we sell our product</h4>
-		<h3>
-		We will be displaying our product in out website where customers could brows through the site to look for a product that 
-		they are looking for. To buy the product customer will need to register as a member and log-in. if customer is not log-in 
-		the purchase function will not be available. Product will then be delivered to address registered.
-		</h3>
-      </div>
+        <h4>Employee Hiring Company (EHC)</h4>
+        <h3>Hello, welcome to Employee Hiring Company.</h3>
+        <h4>Location</h4>
+        <h3>EHC is located in 90 South Street Murdoch WA 6150</h3>
+        <h4>How EHC relate jobs to employee from employer?</h4>
+        <h3>
+          EHC provide a service as a transiction medium of the employer and their employee. 
+          Any employer, who is member of EHC can post an Job vacancy in EHW and employee can see it.
+          And EHC will trained each group of employee and make them ready to give best in their job. 
+        </h3>
+    </div>
 	</article>
 
   <sript type="text/javascript" src="js/script.js"> </script>
 
 	</body>
 
-	<footer>
+  <footer  style = "position: fixed;">
         <div class="footer-text">
-            <span>&copy; copyrightB&Rpc's2019 </span> <a class="help" href='#help'>HELP</a> <a href='#about'>ABOUT</a><br>
-            <span>&#9993; brpc@gmail.com.au</span> <br>
+            <span>&copy; copyrightehc's2019 </span> <a class="help" href='#help'>HELP</a> <a href='#about'>ABOUT</a><br>
+            <span>&#9993; ehc@gmail.com.au</span> <br>
             <span>90 South Street Murdoch WA 6150 </span><br>
             <span>&phone; +61 8 9360 6000</span><br>
         </div>
