@@ -1,250 +1,261 @@
 <!DOCTYPE html> 
 <html> 
   <head>
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-		<link rel='stylesheet' type='text/css' href='css/styles.css'>
-        <title>Index Page</title>
-	<script type="text/javascript" src="js/script.js"></script>
-	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
-<script src="js/jquery-3.3.1.js"></script>	
-	<script type="text/javascript" src="js/index.js"></script>
-<style>
-  #chip {
-  display: inline-block;
-  padding: 0 25px;
-  height: 50px;
-  font-size: 16px;
-  line-height: 50px;
-  border-radius: 25px;
-  background-color: #f1f1f1;
-  color: red;
-}
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+      <link rel='stylesheet' type='text/css' href='css/styles.css'>
+      
+      <title>Index Page</title>
 
-#chip img {
-  float: left;
-  margin: 0 10px 0 -25px;
-  height: 50px;
-  width: 150px;
-  border-radius: 50%;
-}
-</style>
-
+      <script type="text/javascript" src="js/script.js"></script>
+      <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+      <script src="js/jquery-3.3.1.js"></script>	
+      <script type="text/javascript" src="js/index.js"></script>
   </head>
+
+<div class="body-content">
+  <body class="body-content">  
   
-<body style= "text-align:center;">  
-  
-<div class='header'>       
-	<form action="server/search.php" method="POST">
-		 <strong class='title'>Employee Hiring Website</strong>
-	         <input class='search-bar' type='text'  placeholder='Search...' name='query' style = "width:50%; height:35px;")/>
-		 <input class="search-btn" type="submit" name="search" value="Search"/>
-  </form>
-  
-        <!-- <div id="id05" class="registerModal">
-        	<form class="registerModal-content animate" action="register.php" method="post">
-			<p>hello this is search result.</p>
-		        <div class="container">
-				<ol>
-					<li> <?php
-						error_reporting(0);
-						echo $_POST['result']; ?>
-			                </li>
-				</ol>		
-            		</div>
-	</div>
-		</form> -->
-			
-</div>
-</div>
-
- 
-<div class='nav'>  
-<a href='#'>Home</a>
-<a href='#'>Jobs</a>
-<!--<a href='#'></a>
-  <a href='#'></a> -->
-<!-- <a id='apply' onclick="document.getElementById('id04').style.display='block'">Apply</a> -->
-<a id='upload' onclick="document.getElementById('id05').style.display='block'"> &#9889; Upload</a>
-
-<!-- <a id ='login' href='#cart' style:color:Green;">View Carts</a> -->
-
-    <a id='login' onclick="document.getElementById('id02').style.display='block'">Register</a>
-    <a id='login' onclick="document.getElementById('id01').style.display='block'">Login</a>
-   
-    
-</div>
-
-<!-- login model -->
-  <div id="id01" class="loginModal">
-    <form class="loginModal-content animate" action="server/login.php" method="post">
-
-        <div class="imgcontainer">
-          <span onclick="document.getElementById('id01').style.display='none'" class="close" title="Close Modal">&times;</span>
-          <h2>Login Form</h2>
-          <img src="img/anonymous.jpeg" alt="anonymous" class="anonymous">
-        </div>
-
-        <div class="container">
-          <label for="username"><b>Username</b></label>
-          <input id="username" type="text" placeholder="Enter Username" name="username" required>
-
-          <label for="psw"><b>Password</b></label>
-          <input id="password" type="password" placeholder="Enter Password" name="password" required>
-
-          <button class="login" name="login" id="login_btn" type="submit" >Login</button>
-
-
-
-          <label>
-            <input type="checkbox" checked="checked" name="remember"> Remember me
-          </label>
-	      </div>
-
-        <div class="container" style="background-color:#f1f1f1">
-          <button type="button" onclick="document.getElementById('id01').style.display='none'" class="cancelbtn">Cancel</button>
-          <span class="psw">Forgot <a href="#">password?</a></span>
-        </div>
-      </form>
-      </div>
-
-      <!-- register model -->
-
-      <div id="id02" class="registerModal">
-        <form class="registerModal-content animate" action="server/register.php" method="post">
-
-            <div class="imgcontainer">
-              <span onclick="document.getElementById('id02').style.display='none'" class="close" title="Close Modal">&times;</span>
-              <h2>Registration Form</h2>
-              <img src="img/anonymous.jpeg" alt="anonymous" class="anonymous">
-            </div>
-
-            <div class="container">
-
-              <label for="uname"><b>Name</b></label>
-              <input type="text" placeholder="Enter Username" name="username" required>
-
-		          <label for="address"><b>Address</b></label>
-              <input type="text" placeholder="Enter Address" name="address" >
-
-	            <label for="email"><b>Contact e-mail</b></label>
-              <input type="email" placeholder="eg: b&rpc@gmail.com" name="email" required>
-
-              <label for="phone"><b>Contact phone</b></label>
-              <input type="number" placeholder="eg: 0 452 *** *** " name="phone"><br><br>
-
-              <label for="psw"><b>Password</b></label>
-              <input type="password" placeholder="Enter New Password" name="password" required>
-
-              <label for="psw"><b>Confirm Password</b></label>
-              <input type="password" placeholder="Confirm your Password" name="cpassword" required>
-
-              <button class="login" type="submit" style="background-color: darkblue" name="register_btn">Resister</button>
-
-            </div>
-
-            <div class="container" style="background-color:#f1f1f1">
-              <button type="button" onclick="document.getElementById('id02').style.display='none'" class="cancelbtn">Cancel</button>
-            </div>
-        </form>
-      </div>
-<!--Apply model-->
-
-        <div id="id04" class="loginModal">
-            <form class="loginModal-content animate" action="server/apply.php" method="post">
-              
-              <div class="imgcontainer">
-                <span onclick="document.getElementById('id04').style.display='none'" class="close" title="Close Modal">&times;</span>
-                <h2>Application Form</h2>
-               <img src="img/anonymous.jpeg" alt="anonymous" class="anonymous"> 
-              </div>
-      
-              <div class="container">
-                <label for="username"><b>Username</b></label>
-                <input id="username" type="text" placeholder="Enter Username" name="username" required>
-      
-                <label for="psw"><b>Password</b></label>
-                <input id="password" type="password" placeholder="Enter Password" name="password" required>
-      
-                <button class="login" name="login" id="login_btn" type="submit" >Login</button>
-      
-                <label>
-                  <input type="checkbox" checked="checked" name="remember"> Remember me
-                </label>
-              </div>
-      
-              <div class="container" style="background-color:#f1f1f1">
-                <button type="button" onclick="document.getElementById('id01').style.display='none'" class="cancelbtn">Cancel</button>
-                <span class="psw">Forgot <a href="#">password?</a></span>
-              </div>
-
-            </form>
-          </div>
+  <div class='header'>       
+    <form action="server/search.php" method="POST">
+      <strong class='title'>Employee Hiring Website</strong>
+            <input class='search-bar' type='text'  placeholder='Search...' name='query' style = "width:50%; height:35px;")/>
+      <input class="search-btn" type="submit" name="search" value="Search"/>
        
-<!-- upload model -->
-        <div id="id05" class="loginModal">
-          <form class="loginModal-content animate" action="server/upload.php" method="post" enctype="multipart/form-data">
       
-              <div class="imgcontainer">
-                <span onclick="document.getElementById('id05').style.display='none'" class="close" title="Close Modal">&times;</span>
-                <h2>Upload files</h2>
-              </div>
-      
+    
+          <!-- <div id="id05" class="registerModal">
+            <form class="registerModal-content animate" action="register.php" method="post">
+        <p>hello this is search result.</p>
               <div class="container">
-                <label for="resume"><b>Resume:  </b></label>
-                <input id="resume" type="file" name="resume"> <br><br>
+          <ol>
+            <li> <?php
+              error_reporting(0);
+              echo $_POST['result']; ?>
+                        </li>
+          </ol>		
+                  </div>
+    </div>
+      </form> -->
+        
+  <!-- </div> -->
 
-                <label for="docs"><b>Add supportive documents: </b></label>
-                <button name="docs" onclick="upload()"> Click here! </button><br>
 
-                <script>
-                  function upload() {
-                    var x = document.createElement("INPUT");
-                    x.setAttribute("type","file");
-                    document.body.appendChild(x);
-                  }
-                </script>
-                <button class="uploadRe" name="resume" id="submit_resume" type="submit"> Submit</button>
+  
+  <div class='nav'>  
+  <a href='#home'>Home</a>
+  <!-- <a href='#'>Jobs</a> -->
+  <!-- <button  onclick="document.getElementById('id06').style.display='block'">Jobs</button> -->
+  <a id='login' onclick="document.getElementById('id06').style.display='block'">Jobs</a>
 
-              </div>                
+  <!--<a href='#'></a>
+    <a href='#'></a> -->
+  <!-- <a id='apply' onclick="document.getElementById('id04').style.display='block'">Apply</a> -->
+  <a id='upload' onclick="document.getElementById('id05').style.display='block'"> &#9889; Upload</a>
 
+  <!-- <a id ='login' href='#cart' style:color:Green;">View Carts</a> -->
+
+      <a id='login' onclick="document.getElementById('id02').style.display='block'">Register</a>
+      <a id='login' onclick="document.getElementById('id01').style.display='block'">Login</a>
+    </div> 
       
-              <div class="container" style="background-color:#f1f1f1">
-                <button type="button" onclick="document.getElementById('id05').style.display='none'" class="cancelbtn">Cancel</button>
-              </div>
-          </form>
-        </div>
-
-
-<!-- <article id='home'>
-<?php include 'server/getitem.php';?>
-</article>
-
-<article id='apply' hidden='hidden'>
-<?php include 'server/apply.php';?>
-</article>
-
-<article id='buy' hidden='hidden'>
-<h4>Thanks for buying!</h4>
-</article>
-<?php include 'server/apply.php';?>
-</article>
-
-<article id='buy' hidden='hidden'>
-<h4>Thanks for buying!</h4>
-</article>
-
-<article id='cpu' hidden='hidden'>
-<?php include 'server/getcpu.php';?>
-</article> -->
-
-<div id="chip">
-  <img src="img/me.jpg" alt="Person" width="96" height="96">
-  Hello, from Rijan
   </div>
 
 
 
-</body>
+  <!-- login model -->
+    <div id="id01" class="loginModal">
+      <form class="loginModal-content animate" action="server/login.php" method="post">
+
+          <div class="imgcontainer">
+            <span onclick="document.getElementById('id01').style.display='none'" class="close" title="Close Modal">&times;</span>
+            <h2>Login Form</h2>
+            <img src="img/anonymous.jpeg" alt="anonymous" class="anonymous">
+          </div>
+
+          <div class="container">
+            <label for="username"><b>Username</b></label>
+            <input id="username" type="text" placeholder="Enter Username" name="username" required>
+
+            <label for="psw"><b>Password</b></label>
+            <input id="password" type="password" placeholder="Enter Password" name="password" required>
+
+            <button class="login" name="login" id="login_btn" type="submit" >Login</button>
+
+
+
+            <label>
+              <input type="checkbox" checked="checked" name="remember"> Remember me
+            </label>
+          </div>
+
+          <div class="container" style="background-color:#f1f1f1">
+            <button type="button" onclick="document.getElementById('id01').style.display='none'" class="cancelbtn">Cancel</button>
+            <span class="psw">Forgot <a href="#">password?</a></span>
+          </div>
+        </form>
+        </div>
+
+        <!-- register model -->
+
+        <div id="id02" class="registerModal">
+          <form class="registerModal-content animate" action="server/register.php" method="post">
+
+              <div class="imgcontainer">
+                <span onclick="document.getElementById('id02').style.display='none'" class="close" title="Close Modal">&times;</span>
+                <h2>Registration Form</h2>
+                <img src="img/anonymous.jpeg" alt="anonymous" class="anonymous">
+              </div>
+
+              <div class="container">
+
+                <label for="uname"><b>Name</b></label>
+                <input type="text" placeholder="Enter Username" name="username" required>
+
+                <label for="address"><b>Address</b></label>
+                <input type="text" placeholder="Enter Address" name="address" >
+
+                <label for="email"><b>Contact e-mail</b></label>
+                <input type="email" placeholder="eg: b&rpc@gmail.com" name="email" required>
+
+                <label for="phone"><b>Contact phone</b></label>
+                <input type="number" placeholder="eg: 0 452 *** *** " name="phone"><br><br>
+
+                <label for="psw"><b>Password</b></label>
+                <input type="password" placeholder="Enter New Password" name="password" required>
+
+                <label for="psw"><b>Confirm Password</b></label>
+                <input type="password" placeholder="Confirm your Password" name="cpassword" required>
+
+                <button class="login" type="submit" style="background-color: darkblue" name="register_btn">Resister</button>
+
+              </div>
+
+              <div class="container" style="background-color:#f1f1f1">
+                <button type="button" onclick="document.getElementById('id02').style.display='none'" class="cancelbtn">Cancel</button>
+              </div>
+          </form>
+        </div>
+  <!--Apply model-->
+
+          <div id="id04" class="loginModal">
+              <form class="loginModal-content animate" action="server/apply.php" method="post">
+                
+                <div class="imgcontainer">
+                  <span onclick="document.getElementById('id04').style.display='none'" class="close" title="Close Modal">&times;</span>
+                  <h2>Application Form</h2>
+                <img src="img/anonymous.jpeg" alt="anonymous" class="anonymous"> 
+                </div>
+        
+                <div class="container">
+                  <label for="username"><b>Username</b></label>
+                  <input id="username" type="text" placeholder="Enter Username" name="username" required>
+        
+                  <label for="psw"><b>Password</b></label>
+                  <input id="password" type="password" placeholder="Enter Password" name="password" required>
+        
+                  <button class="login" name="login" id="login_btn" type="submit" >Login</button>
+        
+                  <label>
+                    <input type="checkbox" checked="checked" name="remember"> Remember me
+                  </label>
+                </div>
+        
+                <div class="container" style="background-color:#f1f1f1">
+                  <button type="button" onclick="document.getElementById('id01').style.display='none'" class="cancelbtn">Cancel</button>
+                  <span class="psw">Forgot <a href="#">password?</a></span>
+                </div>
+
+              </form>
+            </div>
+        
+  <!-- upload model -->
+          <div id="id05" class="loginModal">
+            <form class="loginModal-content animate" action="server/upload.php" method="post" enctype="multipart/form-data">
+        
+                <div class="imgcontainer">
+                  <span onclick="document.getElementById('id05').style.display='none'" class="close" title="Close Modal">&times;</span>
+                  <h2>Upload files</h2>
+                </div>
+        
+                <div class="container">
+                  <label for="resume"><b>Resume:  </b></label>
+                  <input id="resume" type="file" name="resume"> <br><br>
+
+                  <label for="docs"><b>Add supportive documents: </b></label>
+                  <button name="docs" onclick="upload()"> Click here! </button><br>
+
+                  <script>
+                    function upload() {
+                      var x = document.createElement("INPUT");
+                      x.setAttribute("type","file");
+                      document.body.appendChild(x);
+                    }
+                  </script>
+                  <button class="uploadRe" name="resume" id="submit_resume" type="submit"> Submit</button>
+
+                </div>                
+
+        
+                <div class="container" style="background-color:#f1f1f1">
+                  <button type="button" onclick="document.getElementById('id05').style.display='none'" class="cancelbtn">Cancel</button>
+                </div>
+            </form>
+          </div>
+
+  <!-- Job model -->
+          <div id="id06">
+            <form action="" method="post">
+        
+                <div class="imgcontainer">
+                  <span onclick="document.getElementById('id06').style.display='none'" class="close" title="Close Modal">&times;</span>
+                  <h2>Job Vacancy</h2>
+                </div>
+        
+                <div class="container">
+                  <p> hello this is jobs **
+                    ***
+                    8***</p>
+                  <label for=" "><b>Jobs </b></label>
+                  <input id="" type="" name=""/> <br> <br>
+                  
+                </div>                
+
+                <div class="container" style="background-color:#f1f1f1">
+                  <button type="button" onclick="document.getElementById('id06').style.display='none'" class="cancelbtn">Back</button>
+                </div>
+            </form>
+          </div>
+
+
+  <!-- <article id='home'>
+  <?php include 'server/getitem.php';?>
+  </article>
+
+  <article id='apply' hidden='hidden'>
+  <?php include 'server/apply.php';?>
+  </article>
+
+  <article id='buy' hidden='hidden'>
+  <h4>Thanks for buying!</h4>
+  </article>
+  <?php include 'server/apply.php';?>
+  </article>
+
+  <article id='buy' hidden='hidden'>
+  <h4>Thanks for buying!</h4>
+  </article>
+
+  <article id='cpu' hidden='hidden'>
+  <?php include 'server/getcpu.php';?>
+  </article> -->
+
+  <div class="content">
+     
+
+
+  </div>
+  </body>
+</div>
 
 
 
@@ -277,14 +288,19 @@
 
 	</body>
 
-  <footer  style = "position: fixed;">
+  <footer>
         <div class="footer-text">
             <span>&copy; copyrightehc's2019 </span> <a class="help" href='#help'>HELP</a> <a href='#about'>ABOUT</a><br>
             <span>&#9993; ehc@gmail.com.au</span> <br>
             <span>90 South Street Murdoch WA 6150 </span><br>
             <span>&phone; +61 8 9360 6000</span><br>
         </div>
-
+        <!-- chip displaying photo name and number -->
+       <div id="chip">
+        <img src="img/me.jpg" alt="Person" width="96" height="96">
+        <b>Rijan</b> Contact: 0 452 *** ***
+      </div>
+    </form>
     </footer>
 
 </html>
