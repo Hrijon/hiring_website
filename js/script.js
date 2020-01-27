@@ -6,6 +6,7 @@ var registerModal = document.getElementById('id02');
 var homePage = document.getElementById('id03');
 var apply = document.getElementById('id04');
 var upload = document.getElementById('id05');
+var job = document.getElementById('id06');
 
 
 // When the user clicks anywhere outside of the modal, close it
@@ -30,5 +31,8 @@ window.onclick = function(event) {
         upload.style.display = "none";
     }
 
+    if(event.target == job) {
+        job.style.display = "none";
+    }
 }
 
