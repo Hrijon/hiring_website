@@ -62,7 +62,7 @@
 
 
 
-  <!-- login model -->
+<!-- login model -->
     <div id="id01" class="loginModal">
       <form class="loginModal-content animate" action="server/login.php" method="post">
 
@@ -74,14 +74,12 @@
 
           <div class="container">
             <label for="username"><b>Username</b></label>
-            <input id="username" type="text" placeholder="Enter Username" name="username" required>
+             <input id="username" type="text" placeholder="Enter Username" name="username" required>
 
             <label for="psw"><b>Password</b></label>
-            <input id="password" type="password" placeholder="Enter Password" name="password" required>
+             <input id="password" type="password" placeholder="Enter Password" name="password" required>
 
             <button class="login" name="login" id="login_btn" type="submit" >Login</button>
-
-
 
             <label>
               <input type="checkbox" checked="checked" name="remember"> Remember me
@@ -95,7 +93,7 @@
         </form>
         </div>
 
-        <!-- register model -->
+<!-- register model -->
 
         <div id="id02" class="registerModal">
           <form class="registerModal-content animate" action="server/register.php" method="post">
@@ -135,7 +133,8 @@
               </div>
           </form>
         </div>
-  <!--Apply model-->
+
+<!--Apply model-->
 
           <div id="id04" class="loginModal">
               <form class="loginModal-content animate" action="server/apply.php" method="post">
@@ -168,7 +167,7 @@
               </form>
             </div>
         
-  <!-- upload model -->
+<!-- upload model -->
           <div id="id05" class="loginModal">
             <form class="loginModal-content animate" action="server/upload.php" method="post" enctype="multipart/form-data">
         
@@ -202,30 +201,67 @@
             </form>
           </div>
 
-  <!-- Job model -->
-          <div id="id06">
-            <form action="" method="post">
+<!-- Job model -->
+          <div id="id06" class="loginModal">
+            <form class="loginModal-content animate" action="" method="post">
         
-                <div class="imgcontainer">
-                  <span onclick="document.getElementById('id06').style.display='none'" class="close" title="Close Modal">&times;</span>
-                  <h2>Job Vacancy</h2>
-                </div>
-        
+              <div class="imgcontainer">
+                <span onclick="document.getElementById('id06').style.display='none'" class="close" title="Close Modal">&times;</span>
+                <h2>Job Vacancy</h2>
+                <a id='add_job_btn' onclick="document.getElementById('add_job').style.display='block'"><span class="plus" >&plus; </span> Add Jobs/Employer</a> 
+                
+                  
+
                 <div class="container">
-                  <p> hello this is jobs **
-                    ***
-                    8***</p>
-                  <label for=" "><b>Jobs </b></label>
-                  <input id="" type="" name=""/> <br> <br>
+                  
                   
                 </div>                
 
                 <div class="container" style="background-color:#f1f1f1">
                   <button type="button" onclick="document.getElementById('id06').style.display='none'" class="cancelbtn">Back</button>
                 </div>
+              </div>
             </form>
           </div>
 
+<!-- Add Jobs Model -->
+          <div id="add_job" class="loginModal">
+            <form class="loginModal-content animate">
+        
+              <div class="imgcontainer">
+                <span onclick="document.getElementById('add_job').style.display='none'" class="close" title="Close Modal">&times;</span>
+                        
+                <div class="container">
+                 
+                  
+                  <label for="cname"><b>Company Name</b></label>
+                  <input id="cname" type="text" placeholder="Enter company name" name="cname" required>
+
+                  <label for="yemail"><b>Your Email Address</b></label>
+                  <input id="yemail" type="text" placeholder="Enter email address" name="yemail" required>
+
+                  <label for="phone"><b>Contact phone</b></label>
+                  <input type="number" placeholder="eg: 0 452 *** *** " name="phone"><br><br>
+
+                  <label for="jtitle"><b>Job Title</b></label>
+                  <input id="jtitle" type="text" placeholder="Enter job title" name="jtitle" required>
+
+                  <label for="salary"><b>Salary Per year</b></label>
+                  <input type="number" placeholder="eg: 50000" name="salary" min="15000" max="3000000"><br><br>
+  
+                  <label for="description"><b>Description</b></label>
+                  <textarea rows="4" cols="50" placeholder="Description of job and requirements.." name="description"> </textarea><br><br>
+  
+                  <button class="login" name="addjob" id="login_btn" type="submit" >Submit</button>
+
+                </div>                
+
+                <div class="container" style="background-color:#f1f1f1">
+
+                </div>
+              </div>
+            </form>
+          </div>
 
   <!-- <article id='home'>
   <?php include 'server/getitem.php';?>

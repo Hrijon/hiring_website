@@ -8,7 +8,7 @@
 
 .nav {
   overflow: hidden;
-  background-color: #a3bded;
+  background-color: #6ca4fd;
   margin-top: 40px;
 }
 
@@ -23,7 +23,7 @@
 }
 
 .nav a:hover {
-  background-color: lightgrey;
+  background-color: #a1c4fd ;
   color: red;
 }
 
@@ -58,7 +58,7 @@
 }
 
 .search-btn:hover{
-  background-color: lightgrey;
+  background-color: #a1c4fd ;
   color: red;
 }
 
@@ -164,7 +164,47 @@ input[type=text], input[type=password] {
   box-sizing: border-box;
 }
 
-button:hover {
+
+.button {
+  background-color: none;
+  border: none;
+  color: darkblue;
+  padding: 10px 20px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 15px;
+  margin: 4px 2px;
+  cursor: pointer;
+}
+
+.button:hover {
+  opacity: 0.8;
+  background-color: #a1c4fd;
+  color:red;
+}
+
+#add_job_btn{
+  color:whitesmoke;
+  border: 2px solid green;
+  background-color: green;
+  padding: 5px 10px;
+  font-size: 15px;
+  cursor: pointer;
+  float: right;
+}
+
+.plus{
+  font-size: 25px;
+}
+
+#submit{
+  color:green;
+  align-content: left;
+
+}
+
+button:hover{
   opacity: 0.8;
 }
 
@@ -232,30 +272,11 @@ button:hover {
   }
 }
 
-.button {
-  background-color: none;
-  border: none;
-  color: black;
-  padding: 10px 20px;
-  text-align: center;
-  text-decoration: none;
-  display: inline-block;
-  font-size: 12px;
-  margin: 4px 2px;
-  cursor: pointer;
-}
 
-  
-  #submit{
-    color:green;
-    align-content: left;
-  
-  }
-  
-  /* Style the counter cards */
-  .card:hover{
-    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
-  }
+/* Style the counter cards */
+/* .card:hover{
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+} */
   .card{
     padding: 0px;
     text-align: center;
@@ -295,7 +316,7 @@ button:hover {
     width: 150px;
     border-radius: 50%;
   }
-  
+
   footer{
     color: white;
     background-color: #a1c4fd;
