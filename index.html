@@ -226,16 +226,19 @@
 
 <!-- Add Jobs Model -->
           <div id="add_job" class="loginModal">
-            <form class="loginModal-content animate">
+            <form class="loginModal-content animate" action="server/job.php" method="POST">
         
               <div class="imgcontainer">
                 <span onclick="document.getElementById('add_job').style.display='none'" class="close" title="Close Modal">&times;</span>
                         
                 <div class="container">
                  
-                  
+                  <h2>Job Discription</h2>
                   <label for="cname"><b>Company Name</b></label>
                   <input id="cname" type="text" placeholder="Enter company name" name="cname" required>
+
+                  <label for="caddress"><b>Company Address</b></label>
+                  <input id="caddress" type="text" placeholder="Enter company name" name="caddress" required>
 
                   <label for="yemail"><b>Your Email Address</b></label>
                   <input id="yemail" type="text" placeholder="Enter email address" name="yemail" required>
@@ -250,9 +253,9 @@
                   <input type="number" placeholder="eg: 50000" name="salary" min="15000" max="3000000"><br><br>
   
                   <label for="description"><b>Description</b></label>
-                  <textarea rows="4" cols="50" placeholder="Description of job and requirements.." name="description"> </textarea><br><br>
+                  <textarea rows="4" cols="50" placeholder="Description of job and requirements.." name="descr"> </textarea><br><br>
   
-                  <button class="login" name="addjob" id="login_btn" type="submit" >Submit</button>
+                  <button class="login" name="add_job" id="login_btn" type="submit" >Submit</button>
 
                 </div>                
 
