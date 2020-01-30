@@ -1,8 +1,22 @@
+<?php
+ 	//session start will start the connection with database server
+	session_start();
+	require'server/config.php';
+
+	//check the connection to the database server
+	if ($con->connect_error){
+	 die("Connection failed: " . $con->connect_error);
+  }
+  ?>
+
 <!DOCTYPE html> 
 <html> 
   <head>
-      <meta name="viewport" content="width=device-width, initial-scale=1">
-      <link rel='stylesheet' type='text/css' href='css/styles.css'>
+    <meta content="text/html;charset=utf-8" http-equiv="Content-Type">
+    <meta content="utf-8" http-equiv="encoding">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    
+    <link rel='stylesheet' type='text/css' href='css/styles.css'>
       
       <title>Index Page</title>
 
@@ -124,6 +138,7 @@
                 <label for="psw"><b>Confirm Password</b></label>
                 <input type="password" placeholder="Confirm your Password" name="cpassword" required>
 
+
                 <button class="login" type="submit" style="background-color: darkblue" name="register_btn">Resister</button>
 
               </div>
@@ -191,15 +206,42 @@
                     }
                   </script>
                   <button class="uploadRe" name="resume" id="submit_resume" type="submit"> Submit</button>
-
                 </div>                
 
-        
                 <div class="container" style="background-color:#f1f1f1">
                   <button type="button" onclick="document.getElementById('id05').style.display='none'" class="cancelbtn">Cancel</button>
                 </div>
             </form>
           </div>
+
+          <?php
+
+echo "alert (hello)";
+
+ini_set('display_startup_errors', 1);	
+	//session start will start the connection to the database where require  calls the php page of the connection code
+	session_start();
+	require'config.php';
+	
+//if error then it will throw an connect error and die the server
+if ($con->connect_error){
+  die("Connection failed: " . $con->connect_error);
+}
+
+if(isset($_POST['vacancy'])) { 
+    echo "This is Button1 that is selected"; 
+}
+
+// var $raw_results;
+
+$raw_results = mysqli_query($con, "SELECT * FROM add_job");                                                      
+echo '(add_job';
+echo 'alert (add_job)';
+
+$_SESSION['result'] = $raw_results;
+
+?>
+
 
 <!-- Job model -->
           <div id="id06" class="loginModal">
@@ -209,8 +251,14 @@
                 <span onclick="document.getElementById('id06').style.display='none'" class="close" title="Close Modal">&times;</span>
                 <h2>Job Vacancy</h2>
                 <a id='add_job_btn' onclick="document.getElementById('add_job').style.display='block'"><span class="plus" >&plus; </span> Add Jobs/Employer</a> 
-                
-                  
+
+        <?php
+                echo "<div class='column'> <div class='card' style='width: 18rem;'> <div class='card-body'> <h5 class='card-title'> ".$_SESSION['result'], "</div> </div> </div>";
+//                   <!-- ". $results["ItemName"].
+// " <p class='card-text'>". $results["Discription"]."<br> InStock: ". $results["stock"] . "<br><h4> Price: </h4>$ " . $results["Price"].
+//  "</p> $cart_item $buy_item   -->
+
+?>
 
                 <div class="container">
                   
@@ -233,7 +281,7 @@
                         
                 <div class="container">
                  
-                  <h2>Job Discription</h2>
+                  <h2>Job Description</h2>
                   <label for="cname"><b>Company Name</b></label>
                   <input id="cname" type="text" placeholder="Enter company name" name="cname" required>
 
@@ -266,6 +314,51 @@
             </form>
           </div>
 
+<!-- Vacancy Model -->
+  <div id="vacancy" class="loginModal">
+    <form class="loginModal-content animate" action="server/vacancy.php" method="POST">
+
+      <div class="imgcontainer">
+        <span onclick="document.getElementById('vacancy').style.display='none'" class="close" title="Close Modal">&times;</span>
+                
+        <div class="container">
+         
+          <h2>VACANCY</h2>
+          <!-- <label for="cname"><b>Company Name</b></label>
+          <input id="cname" type="text" placeholder="Enter company name" name="cname" required>
+
+          <label for="caddress"><b>Company Address</b></label>
+          <input id="caddress" type="text" placeholder="Enter company name" name="caddress" required>
+
+          <label for="yemail"><b>Your Email Address</b></label>
+          <input id="yemail" type="text" placeholder="Enter email address" name="yemail" required>
+
+          <label for="phone"><b>Contact phone</b></label>
+          <input type="number" placeholder="eg: 0 452 *** *** " name="phone"><br><br>
+
+          <label for="jtitle"><b>Job Title</b></label>
+          <input id="jtitle" type="text" placeholder="Enter job title" name="jtitle" required>
+
+          <label for="salary"><b>Salary Per year</b></label>
+          <input type="number" placeholder="eg: 50000" name="salary" min="15000" max="3000000"><br><br>
+
+          <label for="description"><b>Description</b></label>
+          <textarea rows="4" cols="50" placeholder="Description of job and requirements.." name="descr"> </textarea><br><br> -->
+
+          <button class="login" name="add_job" id="login_btn" type="submit" >Submit</button>
+
+        </div>                             
+          <a id='add_job_btn' onclick="document.getElementById('add_job').style.display='block'"><span class="plus" >&plus; </span> Add Jobs/Employer</a> 
+          <!-- <a id='add_job_btn' onclick="document.getElementById('add_job').style.display='block'"><span class="plus" >&plus; </span> Add Jobs/Employer</a>  -->
+
+
+        <div class="container" style="background-color:#f1f1f1">
+
+        </div>
+      </div>
+    </form>
+  </div>
+
   <!-- <article id='home'>
   <?php include 'server/getitem.php';?>
   </article>
@@ -288,11 +381,16 @@
   <?php include 'server/getcpu.php';?>
   </article> -->
 
-  <div class="content">
-     
+
+  <article id='id06'>
+    <?php include 'server/vacancy.php';?>
+  </article>
 
 
-  </div>
+  <?php 
+  echo 'This is results'.mysqli_query($con, "SELECT * FROM add_job");
+  ?>
+ 
   </body>
 </div>
 
